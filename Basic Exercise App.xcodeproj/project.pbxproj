@@ -14,6 +14,7 @@
 		1E3215B72712478300841CCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3215B52712478300841CCE /* LaunchScreen.storyboard */; };
 		1E3215C22712478300841CCE /* Basic_Exercise_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215C12712478300841CCE /* Basic_Exercise_AppTests.swift */; };
 		1EA514E227124DFC00E64A31 /* TrainingSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA514E127124DFC00E64A31 /* TrainingSessionViewController.swift */; };
+		1EA514E5271252DF00E64A31 /* ExercisesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA514E4271252DF00E64A31 /* ExercisesRepository.swift */; };
 		1EA514E72712540100E64A31 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA514E62712540100E64A31 /* Exercise.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		1E3215C12712478300841CCE /* Basic_Exercise_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic_Exercise_AppTests.swift; sourceTree = "<group>"; };
 		1E3215C72712478300841CCE /* Basic Exercise AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Basic Exercise AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA514E127124DFC00E64A31 /* TrainingSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSessionViewController.swift; sourceTree = "<group>"; };
+		1EA514E4271252DF00E64A31 /* ExercisesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesRepository.swift; sourceTree = "<group>"; };
 		1EA514E62712540100E64A31 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 		1EA514DF27124D3600E64A31 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				1EA514E4271252DF00E64A31 /* ExercisesRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				1E3215AF2712478200841CCE /* ExercisesListViewController.swift in Sources */,
 				1E3215AB2712478200841CCE /* AppDelegate.swift in Sources */,
 				1E3215AD2712478200841CCE /* SceneDelegate.swift in Sources */,
+				1EA514E5271252DF00E64A31 /* ExercisesRepository.swift in Sources */,
 				1EA514E72712540100E64A31 /* Exercise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
