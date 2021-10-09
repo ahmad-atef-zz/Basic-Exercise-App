@@ -14,7 +14,6 @@
 		1E3215B72712478300841CCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3215B52712478300841CCE /* LaunchScreen.storyboard */; };
 		1E3215C22712478300841CCE /* Basic_Exercise_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215C12712478300841CCE /* Basic_Exercise_AppTests.swift */; };
 		1EA514E227124DFC00E64A31 /* TrainingSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA514E127124DFC00E64A31 /* TrainingSessionViewController.swift */; };
-		1ECEBF0F271248B600EB73EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ECEBF0E271248B600EB73EB /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +45,6 @@
 		1E3215C12712478300841CCE /* Basic_Exercise_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic_Exercise_AppTests.swift; sourceTree = "<group>"; };
 		1E3215C72712478300841CCE /* Basic Exercise AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Basic Exercise AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA514E127124DFC00E64A31 /* TrainingSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSessionViewController.swift; sourceTree = "<group>"; };
-		1ECEBF0E271248B600EB73EB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +177,6 @@
 		1ECEBF0D2712486600EB73EB /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				1ECEBF0E271248B600EB73EB /* Main.storyboard */,
 				1E3215B52712478300841CCE /* LaunchScreen.storyboard */,
 				1E3215AA2712478200841CCE /* AppDelegate.swift */,
 				1E3215AC2712478200841CCE /* SceneDelegate.swift */,
@@ -292,7 +289,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ECEBF0F271248B600EB73EB /* Main.storyboard in Resources */,
 				1E3215B72712478300841CCE /* LaunchScreen.storyboard in Resources */,
 				1E3215B42712478300841CCE /* Assets.xcassets in Resources */,
 			);
@@ -496,7 +492,6 @@
 				INFOPLIST_FILE = "Basic Exercise App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -524,7 +519,6 @@
 				INFOPLIST_FILE = "Basic Exercise App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
