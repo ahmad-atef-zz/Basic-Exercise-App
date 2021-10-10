@@ -4,7 +4,7 @@ import Combine
 protocol FavoriteService {
     func add(exercise: Exercise)
     func remove(exercise: Exercise)
-    func loadFavorites() -> AnyPublisher<[Exercise], Never>
+    func loadFavorites() -> AnyPublisher<[Exercise], Error>
 }
 
 protocol DataPersistency {
@@ -18,11 +18,11 @@ final class LocalFavoriteService: FavoriteService {
 
     static let `default` = LocalFavoriteService(UserDefaults.standard)
 
-    var favoritesPublisher: AnyPublisher<[Exercise], Never> {
+    var favoritesPublisher: AnyPublisher<[Exercise], Error> {
         favoritesSubject.eraseToAnyPublisher()
     }
 
-    private var favoritesSubject = PassthroughSubject<[Exercise], Never>()
+    private var favoritesSubject = PassthroughSubject<[Exercise], Error>()
     private var favoriteExercisesList: [Exercise] {
         get {
             guard let favoriteList = dataPersistency.array(forKey: favoritesUserDefaultsKey) as? [Exercise] else { return [] }
@@ -48,7 +48,7 @@ final class LocalFavoriteService: FavoriteService {
         dataPersistency.set(favoriteExercisesList, forKey: favoritesUserDefaultsKey)
     }
 
-    func loadFavorites() -> AnyPublisher<[Exercise], Never> {
+    func loadFavorites() -> AnyPublisher<[Exercise], Error> {
         favoritesPublisher
     }
 }
