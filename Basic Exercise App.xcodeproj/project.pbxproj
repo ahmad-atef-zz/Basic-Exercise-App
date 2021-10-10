@@ -12,21 +12,15 @@
 		1E3215AF2712478200841CCE /* ExercisesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215AE2712478200841CCE /* ExercisesListViewController.swift */; };
 		1E3215B42712478300841CCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E3215B32712478300841CCE /* Assets.xcassets */; };
 		1E3215B72712478300841CCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3215B52712478300841CCE /* LaunchScreen.storyboard */; };
-		1E3215C22712478300841CCE /* Basic_Exercise_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215C12712478300841CCE /* Basic_Exercise_AppTests.swift */; };
+		1E3215C22712478300841CCE /* ExercisesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215C12712478300841CCE /* ExercisesRepositoryTests.swift */; };
 		1EA514E227124DFC00E64A31 /* TrainingSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA514E127124DFC00E64A31 /* TrainingSessionViewController.swift */; };
 		1EA514E5271252DF00E64A31 /* ExercisesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA514E4271252DF00E64A31 /* ExercisesRepository.swift */; };
 		1EA514E72712540100E64A31 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA514E62712540100E64A31 /* Exercise.swift */; };
+		1EA514E927125C7300E64A31 /* Exercise+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA514E827125C7300E64A31 /* Exercise+TestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		1E3215BE2712478300841CCE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1E32159F2712478200841CCE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1E3215A62712478200841CCE;
-			remoteInfo = "Basic Exercise App";
-		};
-		1E3215C82712478300841CCE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1E32159F2712478200841CCE /* Project object */;
 			proxyType = 1;
@@ -44,11 +38,11 @@
 		1E3215B62712478300841CCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E3215B82712478300841CCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E3215BD2712478300841CCE /* Basic Exercise AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Basic Exercise AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E3215C12712478300841CCE /* Basic_Exercise_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basic_Exercise_AppTests.swift; sourceTree = "<group>"; };
-		1E3215C72712478300841CCE /* Basic Exercise AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Basic Exercise AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E3215C12712478300841CCE /* ExercisesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesRepositoryTests.swift; sourceTree = "<group>"; };
 		1EA514E127124DFC00E64A31 /* TrainingSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSessionViewController.swift; sourceTree = "<group>"; };
 		1EA514E4271252DF00E64A31 /* ExercisesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesRepository.swift; sourceTree = "<group>"; };
 		1EA514E62712540100E64A31 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		1EA514E827125C7300E64A31 /* Exercise+TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Exercise+TestData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +54,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1E3215BA2712478300841CCE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1E3215C42712478300841CCE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,7 +77,6 @@
 			children = (
 				1E3215A72712478200841CCE /* Basic Exercise App.app */,
 				1E3215BD2712478300841CCE /* Basic Exercise AppTests.xctest */,
-				1E3215C72712478300841CCE /* Basic Exercise AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,7 +95,8 @@
 		1E3215C02712478300841CCE /* Basic Exercise AppTests */ = {
 			isa = PBXGroup;
 			children = (
-				1E3215C12712478300841CCE /* Basic_Exercise_AppTests.swift */,
+				1E3215C12712478300841CCE /* ExercisesRepositoryTests.swift */,
+				1EA514E827125C7300E64A31 /* Exercise+TestData.swift */,
 			);
 			path = "Basic Exercise AppTests";
 			sourceTree = "<group>";
@@ -229,24 +216,6 @@
 			productReference = 1E3215BD2712478300841CCE /* Basic Exercise AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1E3215C62712478300841CCE /* Basic Exercise AppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1E3215D72712478300841CCE /* Build configuration list for PBXNativeTarget "Basic Exercise AppUITests" */;
-			buildPhases = (
-				1E3215C32712478300841CCE /* Sources */,
-				1E3215C42712478300841CCE /* Frameworks */,
-				1E3215C52712478300841CCE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1E3215C92712478300841CCE /* PBXTargetDependency */,
-			);
-			name = "Basic Exercise AppUITests";
-			productName = "Basic Exercise AppUITests";
-			productReference = 1E3215C72712478300841CCE /* Basic Exercise AppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -261,10 +230,6 @@
 						CreatedOnToolsVersion = 13.0;
 					};
 					1E3215BC2712478300841CCE = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 1E3215A62712478200841CCE;
-					};
-					1E3215C62712478300841CCE = {
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = 1E3215A62712478200841CCE;
 					};
@@ -285,7 +250,6 @@
 			targets = (
 				1E3215A62712478200841CCE /* Basic Exercise App */,
 				1E3215BC2712478300841CCE /* Basic Exercise AppTests */,
-				1E3215C62712478300841CCE /* Basic Exercise AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -301,13 +265,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1E3215BB2712478300841CCE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1E3215C52712478300841CCE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -334,14 +291,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E3215C22712478300841CCE /* Basic_Exercise_AppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1E3215C32712478300841CCE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				1E3215C22712478300841CCE /* ExercisesRepositoryTests.swift in Sources */,
+				1EA514E927125C7300E64A31 /* Exercise+TestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,11 +303,6 @@
 			isa = PBXTargetDependency;
 			target = 1E3215A62712478200841CCE /* Basic Exercise App */;
 			targetProxy = 1E3215BE2712478300841CCE /* PBXContainerItemProxy */;
-		};
-		1E3215C92712478300841CCE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1E3215A62712478200841CCE /* Basic Exercise App */;
-			targetProxy = 1E3215C82712478300841CCE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -500,6 +446,7 @@
 				INFOPLIST_FILE = "Basic Exercise App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -527,6 +474,7 @@
 				INFOPLIST_FILE = "Basic Exercise App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -551,7 +499,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M2XWCGAHWF;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -576,7 +524,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M2XWCGAHWF;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -589,52 +537,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Basic Exercise App.app/Basic Exercise App";
-			};
-			name = Release;
-		};
-		1E3215D82712478300841CCE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M2XWCGAHWF;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ahamd.atef.Basic-Exercise-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Basic Exercise App";
-			};
-			name = Debug;
-		};
-		1E3215D92712478300841CCE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M2XWCGAHWF;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ahamd.atef.Basic-Exercise-AppUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Basic Exercise App";
 			};
 			name = Release;
 		};
@@ -664,15 +566,6 @@
 			buildConfigurations = (
 				1E3215D52712478300841CCE /* Debug */,
 				1E3215D62712478300841CCE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1E3215D72712478300841CCE /* Build configuration list for PBXNativeTarget "Basic Exercise AppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1E3215D82712478300841CCE /* Debug */,
-				1E3215D92712478300841CCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

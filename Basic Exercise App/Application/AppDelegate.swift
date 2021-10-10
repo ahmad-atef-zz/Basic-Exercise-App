@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Basic Exercise App
-//
-//  Created by Ahmed Atef Ali Ahmed on 09.10.21.
-//
-
 import UIKit
 
 @main

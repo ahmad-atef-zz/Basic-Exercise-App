@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Basic Exercise App
-//
-//  Created by Ahmed Atef Ali Ahmed on 09.10.21.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
