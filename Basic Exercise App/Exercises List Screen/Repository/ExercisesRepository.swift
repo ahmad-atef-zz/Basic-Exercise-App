@@ -24,7 +24,7 @@ final class RemoteExercisesRepository: ExercisesRepository {
         return session.dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: [Exercise].self, decoder: decoder)
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
-
 }

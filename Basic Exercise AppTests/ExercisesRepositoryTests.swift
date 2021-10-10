@@ -23,12 +23,12 @@ final class ExercisesRepositoryTests: XCTestCase {
                 expectation.fulfill()
             }, receiveValue: { value in
                 exercises = value
-                expectation.fulfill()
             }).store(in: &cancelable)
 
         // when
         repository
             .loadSuccessfully(withExercises: .moveHip, .sidePlank)
+        repository.finish()
 
         /// then
         wait(for: [expectation], timeout: 1.0)
@@ -53,11 +53,12 @@ final class ExercisesRepositoryTests: XCTestCase {
                 expectation.fulfill()
             }, receiveValue: { value in
                 exercises = value
-                expectation.fulfill()
             }).store(in: &cancelable)
 
         // when
         repository.failToLoad()
+        repository.finish()
+
         wait(for: [expectation], timeout: 1.0)
         XCTAssertNotNil(error)
         XCTAssertTrue(exercises.isEmpty)
@@ -87,5 +88,8 @@ private final class MockExercisesRepository: ExercisesRepository {
         return publisher
     }
 
+    func finish() {
+        subject.send(completion: .finished)
+    }
 
 }
