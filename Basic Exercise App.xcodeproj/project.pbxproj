@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E1513E427134758007192EF /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513E327134758007192EF /* FavoriteService.swift */; };
+		1E1513E6271373EB007192EF /* Array+RemoveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513E5271373EB007192EF /* Array+RemoveObject.swift */; };
 		1E3215AB2712478200841CCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215AA2712478200841CCE /* AppDelegate.swift */; };
 		1E3215AD2712478200841CCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215AC2712478200841CCE /* SceneDelegate.swift */; };
 		1E3215AF2712478200841CCE /* ExercisesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215AE2712478200841CCE /* ExercisesListViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E1513E327134758007192EF /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		1E1513E5271373EB007192EF /* Array+RemoveObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RemoveObject.swift"; sourceTree = "<group>"; };
 		1E3215A72712478200841CCE /* Basic Exercise App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basic Exercise App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3215AA2712478200841CCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E3215AC2712478200841CCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 		1EA514DE27124CF800E64A31 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				1E1513E327134758007192EF /* FavoriteService.swift */,
+				1E1513E5271373EB007192EF /* Array+RemoveObject.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -280,7 +286,9 @@
 			files = (
 				1EA514E227124DFC00E64A31 /* TrainingSessionViewController.swift in Sources */,
 				1E3215AF2712478200841CCE /* ExercisesListViewController.swift in Sources */,
+				1E1513E6271373EB007192EF /* Array+RemoveObject.swift in Sources */,
 				1E3215AB2712478200841CCE /* AppDelegate.swift in Sources */,
+				1E1513E427134758007192EF /* FavoriteService.swift in Sources */,
 				1E3215AD2712478200841CCE /* SceneDelegate.swift in Sources */,
 				1EA514E5271252DF00E64A31 /* ExercisesRepository.swift in Sources */,
 				1EA514E72712540100E64A31 /* Exercise.swift in Sources */,
