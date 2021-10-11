@@ -20,11 +20,10 @@ final class RemoteExercisesRepository: ExercisesRepository {
     }
 
     func loadExercises() -> AnyPublisher<[Exercise], Error> {
-        let url = baseURL.appendingPathExtension("027787de-c76e-11eb-ae0a-39a1b8479ec2")
+        let url = baseURL.appendingPathComponent("027787de-c76e-11eb-ae0a-39a1b8479ec2")
         return session.dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: [Exercise].self, decoder: decoder)
-            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 }

@@ -22,7 +22,7 @@ final class LocalFavoriteService: FavoriteService {
         favoritesSubject.eraseToAnyPublisher()
     }
 
-    private var favoritesSubject = PassthroughSubject<[Exercise], Error>()
+    private lazy var favoritesSubject = CurrentValueSubject<[Exercise], Error>(favoriteExercisesList)
     private var favoriteExercisesList: [Exercise] {
         get {
             guard let favoriteList = dataPersistency.array(forKey: favoritesUserDefaultsKey) as? [Exercise] else { return [] }
@@ -49,6 +49,7 @@ final class LocalFavoriteService: FavoriteService {
     }
 
     func loadFavorites() -> AnyPublisher<[Exercise], Error> {
+
         favoritesPublisher
     }
 }

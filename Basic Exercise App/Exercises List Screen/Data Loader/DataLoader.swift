@@ -12,6 +12,9 @@ final class ExerciseDataLoader: ExerciseDataSource {
     private let favoriteService: FavoriteService
     private let exercisesRepository: ExercisesRepository
     private var cancellable = Set<AnyCancellable>()
+    private var exercises = [Exercise]()
+
+    private(set) var dataChanged = PassthroughSubject<Void, Never>()
 
     @Published
     internal var isLoading: Bool = false
@@ -44,12 +47,13 @@ final class ExerciseDataLoader: ExerciseDataSource {
             }
 
         Publishers.CombineLatest(exercisesPublisher, favoritesPublisher)
-            .receive(
-                on: DispatchQueue.main)
-            .sink(
-                receiveValue: { value in
-                    self.isLoading = false
-                })
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] value in
+                guard let self = self else { return }
+                self.isLoading = false
+                self.exercises = value.0
+                self.dataChanged.send()
+            })
             .store(in: &cancellable)
     }
 }

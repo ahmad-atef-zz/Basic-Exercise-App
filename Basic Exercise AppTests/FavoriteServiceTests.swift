@@ -66,11 +66,12 @@ class FavoriteServiceTests: XCTestCase {
 
 private final class MockFavoriteService: FavoriteService {
 
-    var publisher: AnyPublisher<[Exercise], Never> {
+
+    var publisher: AnyPublisher<[Exercise], Error> {
         subject.eraseToAnyPublisher()
     }
 
-    private let subject = PassthroughSubject<[Exercise], Never>()
+    private let subject = PassthroughSubject<[Exercise], Error>()
     private var exercises = [Exercise]() {
         didSet {
             subject.send(exercises)
@@ -89,7 +90,7 @@ private final class MockFavoriteService: FavoriteService {
         subject.send(completion: .finished)
     }
 
-    func loadFavorites() -> AnyPublisher<[Exercise], Never> {
+    func loadFavorites() -> AnyPublisher<[Exercise], Error> {
         publisher
     }
 }
