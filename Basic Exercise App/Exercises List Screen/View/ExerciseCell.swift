@@ -5,8 +5,14 @@ final class ExerciseCell: UICollectionViewCell {
 
     struct ViewModel {
         let exerciseName: String
-        let exerciseImageURL: URL
+        let exerciseImageURL: URL?
         let isFavorite: Bool
+
+        init(_ exerciseItem: ExerciseItem) {
+            self.exerciseName = exerciseItem.exercise.name
+            self.exerciseImageURL = URL(string: exerciseItem.exercise.coverImageUrl)
+            self.isFavorite = exerciseItem.isFavorited
+        }
     }
 
     private let titleLabel: UILabel = {

@@ -34,7 +34,7 @@ final class ExercisesListViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.dataSource = self
         exerciseCellRegistration = UICollectionView.CellRegistration { cell, indexPath, exerciseItem in
-
+            cell.apply(.init(exerciseItem))
         }
 
         collectionView.register(ExerciseCell.self, forCellWithReuseIdentifier: ExerciseCell.reuseIdentifier)
