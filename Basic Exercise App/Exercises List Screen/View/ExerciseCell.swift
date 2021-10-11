@@ -5,8 +5,14 @@ final class ExerciseCell: UICollectionViewCell {
 
     struct ViewModel {
         let exerciseName: String
-        let exerciseImageURL: URL
+        let exerciseImageURL: URL?
         let isFavorite: Bool
+
+        init(_ exerciseItem: ExerciseItem) {
+            self.exerciseName = exerciseItem.exercise.name
+            self.exerciseImageURL = URL(string: exerciseItem.exercise.coverImageUrl)
+            self.isFavorite = exerciseItem.isFavorited
+        }
     }
 
     private let titleLabel: UILabel = {
@@ -34,6 +40,7 @@ final class ExerciseCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = .green
         setUp()
     }
 
@@ -42,7 +49,7 @@ final class ExerciseCell: UICollectionViewCell {
     }
 
     private func setUp() {
-        horizontalStackView.addSubviews(coverImage, titleLabel, favoriteStatusButton)
+        horizontalStackView.addArrangedSubviews(coverImage, titleLabel, favoriteStatusButton)
         contentView.addSubview(horizontalStackView)
         horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -61,9 +68,9 @@ final class ExerciseCell: UICollectionViewCell {
 }
 
 private extension UIStackView {
-    func addSubviews(_ views: UIView...) {
+    func addArrangedSubviews(_ views: UIView...) {
         for view in views {
-            addSubview(view)
+            addArrangedSubview(view)
         }
     }
 }

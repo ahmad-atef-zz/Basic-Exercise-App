@@ -56,7 +56,13 @@ final class ExerciseDataLoader: ExerciseDataSource {
 
                 self.exercises = value.0
                 self.favoritedExercise = value.1
-
+                self.exerciseItems = self.exercises
+                    .compactMap {
+                        ExerciseItem(
+                            exercise: $0,
+                            isFavorited: false
+                        )
+                    }
                 self.dataChanged.send()
             })
             .store(in: &cancellable)

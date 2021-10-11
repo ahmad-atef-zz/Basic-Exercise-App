@@ -10,7 +10,6 @@ final class ExercisesListViewController: UIViewController {
     private var loadingIndicator: UIActivityIndicatorView {
         let loadingIndicator = UIActivityIndicatorView(style: .medium)
         loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.startAnimating()
         return loadingIndicator
     }
 
@@ -30,11 +29,12 @@ final class ExercisesListViewController: UIViewController {
         layout.itemSize = CGSize(width: 300, height: 100)
 
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+        collectionView.backgroundColor = .systemGray
         view.addSubview(collectionView)
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.dataSource = self
         exerciseCellRegistration = UICollectionView.CellRegistration { cell, indexPath, exerciseItem in
-
+            cell.apply(.init(exerciseItem))
         }
 
         collectionView.register(ExerciseCell.self, forCellWithReuseIdentifier: ExerciseCell.reuseIdentifier)
