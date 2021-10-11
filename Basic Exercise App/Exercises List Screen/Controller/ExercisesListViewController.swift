@@ -3,9 +3,10 @@ import Combine
 
 final class ExercisesListViewController: UIViewController {
 
-    private let dataLoader: ExerciseDataLoader = ExerciseDataLoader()
     private var cancellable: Set<AnyCancellable> = []
+    private let dataLoader: ExerciseDataLoader = ExerciseDataLoader()
     private var collectionView: UICollectionView!
+    private var exerciseCellRegistration: UICollectionView.CellRegistration<ExerciseCell, ExerciseItem>!
     private var loadingIndicator: UIActivityIndicatorView {
         let loadingIndicator = UIActivityIndicatorView(style: .medium)
         loadingIndicator.hidesWhenStopped = true
@@ -19,8 +20,24 @@ final class ExercisesListViewController: UIViewController {
         self.view.backgroundColor = .systemBackground
         self.title = "Exercise Overview 🏋️"
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: loadingIndicator)
-
+        setUpCollectionView()
+        
         fetchData()
+    }
+
+    private func setUpCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 300, height: 100)
+
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+        view.addSubview(collectionView)
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.dataSource = self
+        exerciseCellRegistration = UICollectionView.CellRegistration { cell, indexPath, exerciseItem in
+
+        }
+
+        collectionView.register(ExerciseCell.self, forCellWithReuseIdentifier: ExerciseCell.reuseIdentifier)
     }
 
     private func fetchData() {
@@ -44,4 +61,21 @@ final class ExercisesListViewController: UIViewController {
 
         dataLoader.loadData()
     }
+}
+
+extension ExercisesListViewController: UICollectionViewDataSource {
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        dataLoader.exerciseItems.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let exerciseItem = dataLoader.exerciseItems[indexPath.row]
+        return collectionView.dequeueConfiguredReusableCell(using: exerciseCellRegistration, for: indexPath, item: exerciseItem)
+    }
+
 }

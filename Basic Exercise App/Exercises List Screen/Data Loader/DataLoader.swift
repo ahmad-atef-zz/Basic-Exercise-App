@@ -13,6 +13,8 @@ final class ExerciseDataLoader: ExerciseDataSource {
     private let exercisesRepository: ExercisesRepository
     private var cancellable = Set<AnyCancellable>()
     private var exercises = [Exercise]()
+    private var favoritedExercise = [Exercise]()
+    var exerciseItems = [ExerciseItem]()
 
     private(set) var dataChanged = PassthroughSubject<Void, Never>()
 
@@ -51,7 +53,10 @@ final class ExerciseDataLoader: ExerciseDataSource {
             .sink(receiveValue: { [weak self] value in
                 guard let self = self else { return }
                 self.isLoading = false
+
                 self.exercises = value.0
+                self.favoritedExercise = value.1
+
                 self.dataChanged.send()
             })
             .store(in: &cancellable)
