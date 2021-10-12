@@ -12,6 +12,7 @@ final class ExercisesListViewController: UIViewController {
         loadingIndicator.hidesWhenStopped = true
         return loadingIndicator
     }
+    private let behaviour = ExerciseListItemBehaviour()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,7 +83,7 @@ extension ExercisesListViewController: UICollectionViewDataSource {
 extension ExercisesListViewController: ExerciseCellDelegate {
     func exerciseListCellDidChangeFavorite(_ cell: ExerciseCell) {
         guard let indexPath = collectionView.indexPath(for: cell) else { return }
-        let exerciseItem = indexPath.row
-
+        let exerciseItem = dataLoader.exerciseItems[indexPath.row]
+        behaviour.toggleFavorite.perform(exerciseItem: exerciseItem)
     }
 }
