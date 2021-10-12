@@ -9,7 +9,7 @@ protocol FavoriteService {
 
 protocol DataPersistency {
     func set(_ value: Any?, forKey defaultName: String)
-    func array(forKey defaultName: String) -> [Any]?
+    func data(forKey defaultName: String) -> Data?
 }
 
 extension UserDefaults: DataPersistency {}
@@ -21,31 +21,45 @@ final class LocalFavoriteService: FavoriteService {
     var favoritesPublisher: AnyPublisher<[Exercise], Error> {
         favoritesSubject.eraseToAnyPublisher()
     }
-
     private lazy var favoritesSubject = CurrentValueSubject<[Exercise], Error>(favoriteExercisesList)
     private var favoriteExercisesList: [Exercise] {
+
         get {
-            guard let favoriteList = dataPersistency.array(forKey: favoritesUserDefaultsKey) as? [Exercise] else { return [] }
-            return favoriteList
+            guard let data = dataPersistency.data(forKey: favoritesUserDefaultsKey) else { return [] }
+            do {
+                let favorites = try decoder.decode([Exercise].self, from: data)
+                return favorites
+            } catch  {
+                print("Unable to decode Array of favorites with error: \(error)")
+            }
+            return []
         }
+
         set {
             favoritesSubject.send(newValue)
+            do {
+                let data = try encoder.encode(newValue)
+                dataPersistency.set(data, forKey: favoritesUserDefaultsKey)
+            } catch {
+                print("Unable to encode Array of favorites \(newValue) with error: \(error)")
+            }
         }
     }
+
     private let dataPersistency: DataPersistency
-    
+    private let decoder = JSONDecoder()
+    private let encoder = JSONEncoder()
+
     init(_ dataPersistency: DataPersistency) {
         self.dataPersistency = dataPersistency
     }
 
     func add(exercise: Exercise) {
         favoriteExercisesList.append(exercise)
-        dataPersistency.set(favoriteExercisesList, forKey: favoritesUserDefaultsKey)
     }
 
     func remove(exercise: Exercise) {
         favoriteExercisesList.remove(object: exercise)
-        dataPersistency.set(favoriteExercisesList, forKey: favoritesUserDefaultsKey)
     }
 
     func loadFavorites() -> AnyPublisher<[Exercise], Error> {

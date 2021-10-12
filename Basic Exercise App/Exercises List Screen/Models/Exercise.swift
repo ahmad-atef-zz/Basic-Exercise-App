@@ -1,4 +1,4 @@
-struct Exercise: Decodable, Equatable {
+struct Exercise: Codable, Equatable {
     let id: Int
     let name: String
     let coverImageUrl: String
