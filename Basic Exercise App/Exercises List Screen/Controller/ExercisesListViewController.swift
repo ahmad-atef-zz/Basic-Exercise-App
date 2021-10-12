@@ -21,7 +21,7 @@ final class ExercisesListViewController: UIViewController {
         self.title = "Exercise Overview 🏋️"
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: loadingIndicator)
         setUpCollectionView()
-        
+
         fetchData()
     }
 
