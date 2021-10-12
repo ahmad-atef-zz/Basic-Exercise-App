@@ -1,7 +1,12 @@
 import UIKit
 
+protocol ExerciseCellDelegate: AnyObject {
+    func exerciseListCellDidChangeFavorite(_ cell: ExerciseCell)
+}
+
 final class ExerciseCell: UICollectionViewCell {
     static let reuseIdentifier = "ExerciseCell"
+    weak var delegate: ExerciseCellDelegate?
 
     struct ViewModel {
         let exerciseName: String
@@ -17,30 +22,36 @@ final class ExerciseCell: UICollectionViewCell {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .headline)
         label.textColor = .label
+        label.numberOfLines = 0
         return label
     }()
+
     private let coverImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 100),
-            imageView.heightAnchor.constraint(equalToConstant: 55),
-        ])
+        imageView.backgroundColor = .systemPink
         return imageView
     }()
-    private let favoriteStatusButton = UIButton()
+
+    private let favoriteButton: UIButton = {
+        let button = UIButton(type: .contactAdd)
+        button.backgroundColor = .systemRed
+        return button
+    }()
+
     private let horizontalStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
+        stackView.distribution = .equalCentering
+        stackView.spacing = 8.0
         return stackView
     }()
 
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .green
+        backgroundColor = .systemBlue
         setUp()
     }
 
@@ -49,11 +60,15 @@ final class ExerciseCell: UICollectionViewCell {
     }
 
     private func setUp() {
-        horizontalStackView.addArrangedSubviews(coverImage, titleLabel, favoriteStatusButton)
+        favoriteButton.addTarget(self, action: #selector(didTapFavorite), for: .touchUpInside)
+
+        horizontalStackView.addArrangedSubviews(coverImage, titleLabel, favoriteButton)
         contentView.addSubview(horizontalStackView)
         horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
+            coverImage.widthAnchor.constraint(equalToConstant: 150.0),
+            favoriteButton.widthAnchor.constraint(equalToConstant: 50.0),
             horizontalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             horizontalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             horizontalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
@@ -65,7 +80,13 @@ final class ExerciseCell: UICollectionViewCell {
         titleLabel.text = viewModel.exerciseName
     }
 
+    @objc
+    func didTapFavorite() {
+        delegate?.exerciseListCellDidChangeFavorite(self)
+    }
+
 }
+
 
 private extension UIStackView {
     func addArrangedSubviews(_ views: UIView...) {

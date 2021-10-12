@@ -25,10 +25,6 @@ final class ExercisesListViewController: UIViewController {
     }
 
     private func setUpCollectionView() {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 300, height: 100)
-
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: .list)
         collectionView.backgroundColor = .systemGray
         view.addSubview(collectionView)
@@ -36,6 +32,7 @@ final class ExercisesListViewController: UIViewController {
         collectionView.dataSource = self
         exerciseCellRegistration = UICollectionView.CellRegistration { cell, indexPath, exerciseItem in
             cell.apply(.init(exerciseItem))
+            cell.delegate = self
         }
 
         collectionView.register(ExerciseCell.self, forCellWithReuseIdentifier: ExerciseCell.reuseIdentifier)
@@ -79,4 +76,13 @@ extension ExercisesListViewController: UICollectionViewDataSource {
         return collectionView.dequeueConfiguredReusableCell(using: exerciseCellRegistration, for: indexPath, item: exerciseItem)
     }
 
+}
+
+
+extension ExercisesListViewController: ExerciseCellDelegate {
+    func exerciseListCellDidChangeFavorite(_ cell: ExerciseCell) {
+        guard let indexPath = collectionView.indexPath(for: cell) else { return }
+        let exerciseItem = indexPath.row
+
+    }
 }
