@@ -29,6 +29,7 @@ final class ExercisesListViewController: UIViewController {
         layout.itemSize = CGSize(width: 300, height: 100)
 
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: .list)
         collectionView.backgroundColor = .systemGray
         view.addSubview(collectionView)
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
