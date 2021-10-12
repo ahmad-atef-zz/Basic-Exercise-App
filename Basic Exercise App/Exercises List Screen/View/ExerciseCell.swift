@@ -35,8 +35,10 @@ final class ExerciseCell: UICollectionViewCell {
     }()
 
     private let favoriteButton: UIButton = {
-        let button = UIButton(type: .contactAdd)
-        button.backgroundColor = .systemRed
+        let button = UIButton()
+        let configuration = UIImage.SymbolConfiguration(weight: .light)
+        button.setPreferredSymbolConfiguration(configuration, forImageIn: .normal)
+        button.backgroundColor = .systemYellow
         return button
     }()
 
@@ -78,6 +80,8 @@ final class ExerciseCell: UICollectionViewCell {
 
     func apply(_ viewModel: ViewModel) {
         titleLabel.text = viewModel.exerciseName
+        let symbol = UIImage(systemName: "star.fill")
+        favoriteButton.setImage(symbol, for: .normal)
     }
 
     @objc
