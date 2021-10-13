@@ -57,7 +57,7 @@ final class ExercisesListViewController: UIViewController {
     }
 
     @objc func didTapStartExercise() {
-        let trainingSessionViewController = TrainingSessionViewController()
+        let trainingSessionViewController = TrainingSessionViewController(dataLoader.exerciseItems)
         //self.present(trainingSessionViewController, animated: true)
         self.navigationController?.pushViewController(trainingSessionViewController, animated: true)
     }
