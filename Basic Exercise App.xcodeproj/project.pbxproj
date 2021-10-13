@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1E1513E427134758007192EF /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513E327134758007192EF /* FavoriteService.swift */; };
-		1E1513E6271373EB007192EF /* Array+RemoveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513E5271373EB007192EF /* Array+RemoveObject.swift */; };
 		1E1513E827137C41007192EF /* FavoriteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513E727137C41007192EF /* FavoriteServiceTests.swift */; };
 		1E1513EA271389E7007192EF /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513E9271389E7007192EF /* DataLoader.swift */; };
 		1E1513EC27138AF0007192EF /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513EB27138AF0007192EF /* ExerciseItem.swift */; };
@@ -41,7 +40,6 @@
 
 /* Begin PBXFileReference section */
 		1E1513E327134758007192EF /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
-		1E1513E5271373EB007192EF /* Array+RemoveObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RemoveObject.swift"; sourceTree = "<group>"; };
 		1E1513E727137C41007192EF /* FavoriteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteServiceTests.swift; sourceTree = "<group>"; };
 		1E1513E9271389E7007192EF /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		1E1513EB27138AF0007192EF /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				1E1513E327134758007192EF /* FavoriteService.swift */,
-				1E1513E5271373EB007192EF /* Array+RemoveObject.swift */,
 				1E576E1927170A4E00770AA2 /* InterfaceOrientationService.swift */,
 			);
 			path = Services;
@@ -337,7 +334,6 @@
 				1E576E1A27170A4E00770AA2 /* InterfaceOrientationService.swift in Sources */,
 				1E1513EC27138AF0007192EF /* ExerciseItem.swift in Sources */,
 				1E5891B92716454600FE97B8 /* ExerciseListItemBehaviour.swift in Sources */,
-				1E1513E6271373EB007192EF /* Array+RemoveObject.swift in Sources */,
 				1E1513EA271389E7007192EF /* DataLoader.swift in Sources */,
 				1E576E182717017300770AA2 /* RemoteImageView.swift in Sources */,
 				1E3215AB2712478200841CCE /* AppDelegate.swift in Sources */,
