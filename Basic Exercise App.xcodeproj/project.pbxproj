@@ -19,6 +19,7 @@
 		1E3215B72712478300841CCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E3215B52712478300841CCE /* LaunchScreen.storyboard */; };
 		1E3215C22712478300841CCE /* ExercisesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215C12712478300841CCE /* ExercisesRepositoryTests.swift */; };
 		1E576E182717017300770AA2 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E576E172717017300770AA2 /* RemoteImageView.swift */; };
+		1E576E1A27170A4E00770AA2 /* InterfaceOrientationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E576E1927170A4E00770AA2 /* InterfaceOrientationService.swift */; };
 		1E5891B527162D2D00FE97B8 /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5891B427162D2D00FE97B8 /* LayoutManager.swift */; };
 		1E5891B92716454600FE97B8 /* ExerciseListItemBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5891B82716454600FE97B8 /* ExerciseListItemBehaviour.swift */; };
 		1E6D20222714E6F60036FD73 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6D20212714E6F60036FD73 /* ExerciseCell.swift */; };
@@ -54,6 +55,7 @@
 		1E3215BD2712478300841CCE /* Basic Exercise AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Basic Exercise AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3215C12712478300841CCE /* ExercisesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesRepositoryTests.swift; sourceTree = "<group>"; };
 		1E576E172717017300770AA2 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
+		1E576E1927170A4E00770AA2 /* InterfaceOrientationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceOrientationService.swift; sourceTree = "<group>"; };
 		1E5891B427162D2D00FE97B8 /* LayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutManager.swift; sourceTree = "<group>"; };
 		1E5891B82716454600FE97B8 /* ExerciseListItemBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListItemBehaviour.swift; sourceTree = "<group>"; };
 		1E6D20212714E6F60036FD73 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				1E1513E327134758007192EF /* FavoriteService.swift */,
 				1E1513E5271373EB007192EF /* Array+RemoveObject.swift */,
+				1E576E1927170A4E00770AA2 /* InterfaceOrientationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			files = (
 				1EA514E227124DFC00E64A31 /* TrainingSessionViewController.swift in Sources */,
 				1E3215AF2712478200841CCE /* ExercisesListViewController.swift in Sources */,
+				1E576E1A27170A4E00770AA2 /* InterfaceOrientationService.swift in Sources */,
 				1E1513EC27138AF0007192EF /* ExerciseItem.swift in Sources */,
 				1E5891B92716454600FE97B8 /* ExerciseListItemBehaviour.swift in Sources */,
 				1E1513E6271373EB007192EF /* Array+RemoveObject.swift in Sources */,

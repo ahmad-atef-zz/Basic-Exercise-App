@@ -9,6 +9,7 @@ final class ExercisesListViewController: UIViewController {
     private var exerciseCellRegistration: UICollectionView.CellRegistration<ExerciseCell, ExerciseItem>!
     private var loadingIndicator: UIActivityIndicatorView!
     private let behaviour = ExerciseListItemBehaviour()
+    private let orientationService: InterfaceOrientationService = ListScreenInterfaceOrientation()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,5 +85,11 @@ extension ExercisesListViewController: ExerciseCellDelegate {
         guard let indexPath = collectionView.indexPath(for: cell) else { return }
         let exerciseItem = dataLoader.exerciseItems[indexPath.row]
         behaviour.toggleFavorite.perform(exerciseItem: exerciseItem)
+    }
+}
+
+extension ExercisesListViewController {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        orientationService.supportedInterfaceOrientations
     }
 }
