@@ -10,12 +10,12 @@ final class ExerciseCell: UICollectionViewCell {
 
     struct ViewModel {
         let exerciseName: String
-        let exerciseImageURL: URL?
+        let exerciseImageURL: URL
         let favoriteButtonImage: UIImage?
 
         init(_ exerciseItem: ExerciseItem) {
             self.exerciseName = exerciseItem.exercise.name
-            self.exerciseImageURL = URL(string: exerciseItem.exercise.coverImageUrl)
+            self.exerciseImageURL = URL(string: exerciseItem.exercise.coverImageUrl)!
             self.favoriteButtonImage = exerciseItem.isFavorited ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
         }
     }
@@ -27,8 +27,8 @@ final class ExerciseCell: UICollectionViewCell {
         return label
     }()
 
-    private let coverImage: UIImageView = {
-        let imageView = UIImageView()
+    private let coverImage: RemoteImageView = {
+        let imageView = RemoteImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .systemPink
         return imageView
@@ -80,6 +80,7 @@ final class ExerciseCell: UICollectionViewCell {
 
     func apply(_ viewModel: ViewModel) {
         titleLabel.text = viewModel.exerciseName
+        coverImage.loadImage(fromURL: viewModel.exerciseImageURL)
         favoriteButton.setImage(viewModel.favoriteButtonImage, for: .normal)
     }
 
