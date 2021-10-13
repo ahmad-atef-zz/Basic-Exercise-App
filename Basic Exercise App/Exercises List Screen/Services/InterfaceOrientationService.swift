@@ -31,4 +31,8 @@ final class TrainingScreenInterfaceOrientation: InterfaceOrientationService {
     var interfaceOrientation: UIInterfaceOrientation {
         .landscapeLeft
     }
+
+    var shouldAutorotate: Bool {
+        false
+    }
 }
