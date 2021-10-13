@@ -5,6 +5,7 @@ final class TrainingSessionViewController: UIViewController {
     private let orientationService: InterfaceOrientationService = TrainingScreenInterfaceOrientation()
     private let dataLoader: TrainingSessionDataLoader
     private var currentExerciseImageView: RemoteImageView!
+    private let behaviours = TrainingSessionBehaviours()
 
     init(_ exerciseItems: [ExerciseItem]) {
         self.dataLoader = TrainingSessionDataLoader(exerciseItems: exerciseItems)
@@ -78,7 +79,7 @@ final class TrainingSessionViewController: UIViewController {
     }
 
     @objc func didTapFavoriteExercise() {
-
+        //behaviour.favoriteBehaviour.perform(exerciseItem: <#T##ExerciseItem#>)
     }
 
     @objc func didTapCancelTraining() {

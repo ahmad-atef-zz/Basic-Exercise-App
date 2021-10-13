@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+final class TrainingSessionBehaviours {
+    private let favoriteBehaviour: ToggleFavoriteBehaviour
+
+    init (favoriteBehaviour: ToggleFavoriteBehaviour = ToggleFavoriteBehaviour()) {
+        self.favoriteBehaviour = favoriteBehaviour
+    }
+}
