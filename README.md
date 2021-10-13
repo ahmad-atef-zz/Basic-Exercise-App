@@ -49,3 +49,34 @@ Given the customer has connectivity
  When the customer tapped on start training button
  Then the app should display the exercise set image from remote in addition to favorite state for each exercise.
 ```
+
+---
+
+### Payload contract
+
+```
+GET
+
+2xx RESPONSE
+
+[
+  {
+    "id": 1,
+    "name": "Exercise name",
+    "cover_image_url": "https://image_url.png",
+    "video_url": "https://video_url.mp4"
+  },
+  {
+    "id": 2,
+    "name": "Exercise name",
+    "cover_image_url": "https://image_url.png",
+    "video_url": "https://video_url.mp4"
+  },
+]
+```
+
+---
+
+## App Architecture
+
+![](App_architecture.png)
