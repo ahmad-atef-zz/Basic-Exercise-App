@@ -9,6 +9,7 @@ final class ExercisesListViewController: UIViewController {
     private var exerciseCellRegistration: UICollectionView.CellRegistration<ExerciseCell, ExerciseItem>!
     private var loadingIndicator: UIActivityIndicatorView!
     private let behaviour = ExerciseListItemBehaviour()
+    private let orientationService: InterfaceOrientationService = ListScreenInterfaceOrientation()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +22,14 @@ final class ExercisesListViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: loadingIndicator)
 
         setUpCollectionView()
+        setUpStartExerciseButton()
         fetchData()
     }
 
     private func setUpCollectionView() {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: .list)
         collectionView.backgroundColor = .systemGray
+        collectionView.contentInset.bottom = 50
         view.addSubview(collectionView)
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.dataSource = self
@@ -34,8 +37,29 @@ final class ExercisesListViewController: UIViewController {
             cell.apply(.init(exerciseItem))
             cell.delegate = self
         }
-
         collectionView.register(ExerciseCell.self, forCellWithReuseIdentifier: ExerciseCell.reuseIdentifier)
+    }
+
+    private func setUpStartExerciseButton() {
+        let button = UIButton()
+        button.setTitle("Start training 💪", for: .normal)
+        button.backgroundColor = .systemOrange
+        button.addTarget(self, action: #selector(didTapStartExercise), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(button)
+
+        NSLayoutConstraint.activate([
+            button.heightAnchor.constraint(equalToConstant: 50),
+            button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            button.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ])
+    }
+
+    @objc func didTapStartExercise() {
+        let trainingSessionViewController = TrainingSessionViewController()
+        //self.present(trainingSessionViewController, animated: true)
+        self.navigationController?.pushViewController(trainingSessionViewController, animated: true)
     }
 
     private func fetchData() {
@@ -84,5 +108,11 @@ extension ExercisesListViewController: ExerciseCellDelegate {
         guard let indexPath = collectionView.indexPath(for: cell) else { return }
         let exerciseItem = dataLoader.exerciseItems[indexPath.row]
         behaviour.toggleFavorite.perform(exerciseItem: exerciseItem)
+    }
+}
+
+extension ExercisesListViewController {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        orientationService.supportedUIInterfaceOrientationMask
     }
 }
