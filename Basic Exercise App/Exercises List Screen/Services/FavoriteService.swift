@@ -36,10 +36,10 @@ final class LocalFavoriteService: FavoriteService {
         }
 
         set {
-            favoritesSubject.send(newValue)
             do {
                 let data = try encoder.encode(newValue)
                 dataPersistency.set(data, forKey: favoritesUserDefaultsKey)
+                favoritesSubject.send(newValue)
             } catch {
                 print("Unable to encode Array of favorites \(newValue) with error: \(error)")
             }

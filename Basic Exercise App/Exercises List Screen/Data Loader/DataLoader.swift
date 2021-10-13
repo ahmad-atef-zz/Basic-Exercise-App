@@ -60,7 +60,7 @@ final class ExerciseDataLoader: ExerciseDataSource {
                     .compactMap {
                         ExerciseItem(
                             exercise: $0,
-                            isFavorited: false
+                            isFavorited: self.favoritedExercise.contains($0)
                         )
                     }
                 self.dataChanged.send()

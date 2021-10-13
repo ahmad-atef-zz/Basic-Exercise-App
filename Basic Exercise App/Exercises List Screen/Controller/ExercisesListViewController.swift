@@ -7,11 +7,7 @@ final class ExercisesListViewController: UIViewController {
     private let dataLoader: ExerciseDataLoader = ExerciseDataLoader()
     private var collectionView: UICollectionView!
     private var exerciseCellRegistration: UICollectionView.CellRegistration<ExerciseCell, ExerciseItem>!
-    private var loadingIndicator: UIActivityIndicatorView {
-        let loadingIndicator = UIActivityIndicatorView(style: .medium)
-        loadingIndicator.hidesWhenStopped = true
-        return loadingIndicator
-    }
+    private var loadingIndicator: UIActivityIndicatorView!
     private let behaviour = ExerciseListItemBehaviour()
 
     override func viewDidLoad() {
@@ -19,9 +15,12 @@ final class ExercisesListViewController: UIViewController {
 
         self.view.backgroundColor = .systemBackground
         self.title = "Exercise Overview 🏋️"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: loadingIndicator)
-        setUpCollectionView()
 
+        loadingIndicator = UIActivityIndicatorView(style: .medium)
+        loadingIndicator.hidesWhenStopped = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: loadingIndicator)
+
+        setUpCollectionView()
         fetchData()
     }
 

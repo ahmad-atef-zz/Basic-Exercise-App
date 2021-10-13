@@ -11,12 +11,12 @@ final class ExerciseCell: UICollectionViewCell {
     struct ViewModel {
         let exerciseName: String
         let exerciseImageURL: URL?
-        let isFavorite: Bool
+        let favoriteButtonImage: UIImage?
 
         init(_ exerciseItem: ExerciseItem) {
             self.exerciseName = exerciseItem.exercise.name
             self.exerciseImageURL = URL(string: exerciseItem.exercise.coverImageUrl)
-            self.isFavorite = exerciseItem.isFavorited
+            self.favoriteButtonImage = exerciseItem.isFavorited ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
         }
     }
 
@@ -80,8 +80,7 @@ final class ExerciseCell: UICollectionViewCell {
 
     func apply(_ viewModel: ViewModel) {
         titleLabel.text = viewModel.exerciseName
-        let symbol = UIImage(systemName: "star.fill")
-        favoriteButton.setImage(symbol, for: .normal)
+        favoriteButton.setImage(viewModel.favoriteButtonImage, for: .normal)
     }
 
     @objc
