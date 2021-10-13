@@ -19,6 +19,8 @@
 		1E3215C22712478300841CCE /* ExercisesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215C12712478300841CCE /* ExercisesRepositoryTests.swift */; };
 		1E576E182717017300770AA2 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E576E172717017300770AA2 /* RemoteImageView.swift */; };
 		1E576E1A27170A4E00770AA2 /* InterfaceOrientationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E576E1927170A4E00770AA2 /* InterfaceOrientationService.swift */; };
+		1E576E1C271718C800770AA2 /* TrainingSessionDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E576E1B271718C800770AA2 /* TrainingSessionDataLoader.swift */; };
+		1E576E1F271718E900770AA2 /* TrainingSessionBehaviours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E576E1E271718E900770AA2 /* TrainingSessionBehaviours.swift */; };
 		1E5891B527162D2D00FE97B8 /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5891B427162D2D00FE97B8 /* LayoutManager.swift */; };
 		1E5891B92716454600FE97B8 /* ExerciseListItemBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5891B82716454600FE97B8 /* ExerciseListItemBehaviour.swift */; };
 		1E6D20222714E6F60036FD73 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6D20212714E6F60036FD73 /* ExerciseCell.swift */; };
@@ -54,6 +56,8 @@
 		1E3215C12712478300841CCE /* ExercisesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesRepositoryTests.swift; sourceTree = "<group>"; };
 		1E576E172717017300770AA2 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		1E576E1927170A4E00770AA2 /* InterfaceOrientationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceOrientationService.swift; sourceTree = "<group>"; };
+		1E576E1B271718C800770AA2 /* TrainingSessionDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSessionDataLoader.swift; sourceTree = "<group>"; };
+		1E576E1E271718E900770AA2 /* TrainingSessionBehaviours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSessionBehaviours.swift; sourceTree = "<group>"; };
 		1E5891B427162D2D00FE97B8 /* LayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutManager.swift; sourceTree = "<group>"; };
 		1E5891B82716454600FE97B8 /* ExerciseListItemBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListItemBehaviour.swift; sourceTree = "<group>"; };
 		1E6D20212714E6F60036FD73 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
@@ -128,6 +132,22 @@
 			path = "Basic Exercise AppTests";
 			sourceTree = "<group>";
 		};
+		1E576E1D271718D100770AA2 /* Data Loader */ = {
+			isa = PBXGroup;
+			children = (
+				1E576E1B271718C800770AA2 /* TrainingSessionDataLoader.swift */,
+			);
+			path = "Data Loader";
+			sourceTree = "<group>";
+		};
+		1E576E20271718F100770AA2 /* Behaviours */ = {
+			isa = PBXGroup;
+			children = (
+				1E576E1E271718E900770AA2 /* TrainingSessionBehaviours.swift */,
+			);
+			path = Behaviours;
+			sourceTree = "<group>";
+		};
 		1E5891B72716449B00FE97B8 /* Layout Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +183,9 @@
 		1EA514DB27124B9E00E64A31 /* Training session */ = {
 			isa = PBXGroup;
 			children = (
+				1E576E1D271718D100770AA2 /* Data Loader */,
 				1EA514E327124E2B00E64A31 /* Controller */,
+				1E576E20271718F100770AA2 /* Behaviours */,
 			);
 			path = "Training session";
 			sourceTree = "<group>";
@@ -331,6 +353,7 @@
 			files = (
 				1EA514E227124DFC00E64A31 /* TrainingSessionViewController.swift in Sources */,
 				1E3215AF2712478200841CCE /* ExercisesListViewController.swift in Sources */,
+				1E576E1F271718E900770AA2 /* TrainingSessionBehaviours.swift in Sources */,
 				1E576E1A27170A4E00770AA2 /* InterfaceOrientationService.swift in Sources */,
 				1E1513EC27138AF0007192EF /* ExerciseItem.swift in Sources */,
 				1E5891B92716454600FE97B8 /* ExerciseListItemBehaviour.swift in Sources */,
@@ -338,6 +361,7 @@
 				1E576E182717017300770AA2 /* RemoteImageView.swift in Sources */,
 				1E3215AB2712478200841CCE /* AppDelegate.swift in Sources */,
 				1E6D20222714E6F60036FD73 /* ExerciseCell.swift in Sources */,
+				1E576E1C271718C800770AA2 /* TrainingSessionDataLoader.swift in Sources */,
 				1E1513E427134758007192EF /* FavoriteService.swift in Sources */,
 				1E3215AD2712478200841CCE /* SceneDelegate.swift in Sources */,
 				1EA514E5271252DF00E64A31 /* ExercisesRepository.swift in Sources */,
