@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E1513E427134758007192EF /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513E327134758007192EF /* FavoriteService.swift */; };
 		1E1513E827137C41007192EF /* FavoriteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513E727137C41007192EF /* FavoriteServiceTests.swift */; };
-		1E1513EA271389E7007192EF /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513E9271389E7007192EF /* DataLoader.swift */; };
+		1E1513EA271389E7007192EF /* ExerciseDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513E9271389E7007192EF /* ExerciseDataLoader.swift */; };
 		1E1513EC27138AF0007192EF /* ExerciseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1513EB27138AF0007192EF /* ExerciseItem.swift */; };
 		1E3215AB2712478200841CCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215AA2712478200841CCE /* AppDelegate.swift */; };
 		1E3215AD2712478200841CCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3215AC2712478200841CCE /* SceneDelegate.swift */; };
@@ -21,6 +21,7 @@
 		1E576E1A27170A4E00770AA2 /* InterfaceOrientationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E576E1927170A4E00770AA2 /* InterfaceOrientationService.swift */; };
 		1E576E1C271718C800770AA2 /* TrainingSessionDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E576E1B271718C800770AA2 /* TrainingSessionDataLoader.swift */; };
 		1E576E1F271718E900770AA2 /* TrainingSessionBehaviours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E576E1E271718E900770AA2 /* TrainingSessionBehaviours.swift */; };
+		1E576E22271720CC00770AA2 /* ExerciseSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E576E21271720CC00770AA2 /* ExerciseSwitcher.swift */; };
 		1E5891B527162D2D00FE97B8 /* LayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5891B427162D2D00FE97B8 /* LayoutManager.swift */; };
 		1E5891B92716454600FE97B8 /* ExerciseListItemBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5891B82716454600FE97B8 /* ExerciseListItemBehaviour.swift */; };
 		1E6D20222714E6F60036FD73 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6D20212714E6F60036FD73 /* ExerciseCell.swift */; };
@@ -43,7 +44,7 @@
 /* Begin PBXFileReference section */
 		1E1513E327134758007192EF /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
 		1E1513E727137C41007192EF /* FavoriteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteServiceTests.swift; sourceTree = "<group>"; };
-		1E1513E9271389E7007192EF /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		1E1513E9271389E7007192EF /* ExerciseDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDataLoader.swift; sourceTree = "<group>"; };
 		1E1513EB27138AF0007192EF /* ExerciseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseItem.swift; sourceTree = "<group>"; };
 		1E3215A72712478200841CCE /* Basic Exercise App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basic Exercise App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3215AA2712478200841CCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +59,7 @@
 		1E576E1927170A4E00770AA2 /* InterfaceOrientationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceOrientationService.swift; sourceTree = "<group>"; };
 		1E576E1B271718C800770AA2 /* TrainingSessionDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSessionDataLoader.swift; sourceTree = "<group>"; };
 		1E576E1E271718E900770AA2 /* TrainingSessionBehaviours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSessionBehaviours.swift; sourceTree = "<group>"; };
+		1E576E21271720CC00770AA2 /* ExerciseSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSwitcher.swift; sourceTree = "<group>"; };
 		1E5891B427162D2D00FE97B8 /* LayoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutManager.swift; sourceTree = "<group>"; };
 		1E5891B82716454600FE97B8 /* ExerciseListItemBehaviour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListItemBehaviour.swift; sourceTree = "<group>"; };
 		1E6D20212714E6F60036FD73 /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
@@ -88,7 +90,7 @@
 		1E1513ED2713910D007192EF /* Data Loader */ = {
 			isa = PBXGroup;
 			children = (
-				1E1513E9271389E7007192EF /* DataLoader.swift */,
+				1E1513E9271389E7007192EF /* ExerciseDataLoader.swift */,
 			);
 			path = "Data Loader";
 			sourceTree = "<group>";
@@ -148,6 +150,14 @@
 			path = Behaviours;
 			sourceTree = "<group>";
 		};
+		1E576E232717221500770AA2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1E576E21271720CC00770AA2 /* ExerciseSwitcher.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		1E5891B72716449B00FE97B8 /* Layout Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +193,7 @@
 		1EA514DB27124B9E00E64A31 /* Training session */ = {
 			isa = PBXGroup;
 			children = (
+				1E576E232717221500770AA2 /* Service */,
 				1E576E1D271718D100770AA2 /* Data Loader */,
 				1EA514E327124E2B00E64A31 /* Controller */,
 				1E576E20271718F100770AA2 /* Behaviours */,
@@ -357,7 +368,7 @@
 				1E576E1A27170A4E00770AA2 /* InterfaceOrientationService.swift in Sources */,
 				1E1513EC27138AF0007192EF /* ExerciseItem.swift in Sources */,
 				1E5891B92716454600FE97B8 /* ExerciseListItemBehaviour.swift in Sources */,
-				1E1513EA271389E7007192EF /* DataLoader.swift in Sources */,
+				1E1513EA271389E7007192EF /* ExerciseDataLoader.swift in Sources */,
 				1E576E182717017300770AA2 /* RemoteImageView.swift in Sources */,
 				1E3215AB2712478200841CCE /* AppDelegate.swift in Sources */,
 				1E6D20222714E6F60036FD73 /* ExerciseCell.swift in Sources */,
@@ -365,6 +376,7 @@
 				1E1513E427134758007192EF /* FavoriteService.swift in Sources */,
 				1E3215AD2712478200841CCE /* SceneDelegate.swift in Sources */,
 				1EA514E5271252DF00E64A31 /* ExercisesRepository.swift in Sources */,
+				1E576E22271720CC00770AA2 /* ExerciseSwitcher.swift in Sources */,
 				1EA514E72712540100E64A31 /* Exercise.swift in Sources */,
 				1E5891B527162D2D00FE97B8 /* LayoutManager.swift in Sources */,
 			);
