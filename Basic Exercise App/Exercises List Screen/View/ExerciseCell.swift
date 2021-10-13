@@ -30,7 +30,6 @@ final class ExerciseCell: UICollectionViewCell {
     private let coverImage: RemoteImageView = {
         let imageView = RemoteImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .systemPink
         return imageView
     }()
 

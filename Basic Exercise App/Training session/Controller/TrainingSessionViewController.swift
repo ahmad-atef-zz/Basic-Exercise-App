@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 
 final class TrainingSessionViewController: UIViewController {
 
@@ -6,6 +7,7 @@ final class TrainingSessionViewController: UIViewController {
     private let dataLoader: TrainingSessionDataLoader
     private var currentExerciseImageView: RemoteImageView!
     private let behaviours = TrainingSessionBehaviours()
+    private var cancelable = Set<AnyCancellable>()
 
     init(_ exerciseItems: [ExerciseItem]) {
         self.dataLoader = TrainingSessionDataLoader(exerciseItems: exerciseItems)
@@ -24,12 +26,33 @@ final class TrainingSessionViewController: UIViewController {
         setupTrainingImageView()
         setUpFavoriteExerciseButton()
         setUpCancelTrainingButton()
-        // loadData()
-
-        currentExerciseImageView.loadImage(fromURL: .init(string: "https://d32oopmphic0po.cloudfront.net/v1/images/body/en-US/body-exercise-4-14.png")!)
+        loadData()
     }
 
     private func loadData() {
+        // Subscription
+
+        dataLoader.$didCompleteSession
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] didCompleteSession in
+                guard let self = self else { return }
+                if didCompleteSession {
+                    self.didCompleteTraining()
+                }
+            }.store(in: &cancelable)
+
+        dataLoader.currentExercisePublisher
+            .compactMap{ $0 }
+            .map(\.exercise.coverImageUrl)
+            .compactMap(URL.init)
+            .print()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] url in
+                guard let self = self else { return }
+                self.currentExerciseImageView.loadImage(fromURL: url)
+            })
+            .store(in: &cancelable)
+
         dataLoader.loadData()
     }
 
@@ -79,10 +102,15 @@ final class TrainingSessionViewController: UIViewController {
     }
 
     @objc func didTapFavoriteExercise() {
-        //behaviour.favoriteBehaviour.perform(exerciseItem: <#T##ExerciseItem#>)
+        guard let currentExercise = dataLoader.currentExercise else { return }
+        behaviours.favoriteBehaviour.perform(exerciseItem: currentExercise)
     }
 
     @objc func didTapCancelTraining() {
+        self.navigationController?.popViewController(animated: true)
+    }
+
+    func didCompleteTraining() {
         self.navigationController?.popViewController(animated: true)
     }
 }

@@ -19,7 +19,7 @@ final class ExerciseDataLoader: ExerciseDataSource {
     private(set) var dataChanged = PassthroughSubject<Void, Never>()
 
     @Published
-    internal var isLoading: Bool = false
+    var isLoading: Bool = false
 
     init(
         favoriteService: FavoriteService = LocalFavoriteService.default,
