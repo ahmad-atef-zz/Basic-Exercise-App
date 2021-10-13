@@ -1,18 +1,34 @@
 import UIKit
 
 protocol InterfaceOrientationService {
-    var supportedInterfaceOrientations: UIInterfaceOrientationMask { get }
+    var supportedUIInterfaceOrientationMask: UIInterfaceOrientationMask { get }
+    var interfaceOrientation: UIInterfaceOrientation { get }
+    var shouldAutorotate: Bool { get }
+}
+
+extension InterfaceOrientationService {
+    var interfaceOrientation: UIInterfaceOrientation {
+        .portrait
+    }
+
+    var shouldAutorotate: Bool {
+        true
+    }
 }
 
 final class ListScreenInterfaceOrientation: InterfaceOrientationService {
-    var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    var supportedUIInterfaceOrientationMask: UIInterfaceOrientationMask {
         .all
     }
 }
 
 
 final class TrainingScreenInterfaceOrientation: InterfaceOrientationService {
-    var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    var supportedUIInterfaceOrientationMask: UIInterfaceOrientationMask {
         .landscape
+    }
+
+    var interfaceOrientation: UIInterfaceOrientation {
+        .landscapeLeft
     }
 }

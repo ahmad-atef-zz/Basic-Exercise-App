@@ -57,7 +57,9 @@ final class ExercisesListViewController: UIViewController {
     }
 
     @objc func didTapStartExercise() {
-
+        let trainingSessionViewController = TrainingSessionViewController()
+        //self.present(trainingSessionViewController, animated: true)
+        self.navigationController?.pushViewController(trainingSessionViewController, animated: true)
     }
 
     private func fetchData() {
@@ -111,6 +113,6 @@ extension ExercisesListViewController: ExerciseCellDelegate {
 
 extension ExercisesListViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        orientationService.supportedInterfaceOrientations
+        orientationService.supportedUIInterfaceOrientationMask
     }
 }
